@@ -51,7 +51,7 @@ public class SimulationMain {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-//        UIManager.setLookAndFeel(new MaterialLookAndFeel());//javax.swing.plaf.nimbus.NimbusLookAndFeel
+        UIManager.setLookAndFeel(new MaterialLookAndFeel());//javax.swing.plaf.nimbus.NimbusLookAndFeel
         showConfiguration();
     }
 
@@ -108,7 +108,7 @@ public class SimulationMain {
     }
 
     public static void adjustScale() {
-        sim.adjustScale();
+        sim.setupPortrayals();
     }
 
     public static void showConfiguration() {
