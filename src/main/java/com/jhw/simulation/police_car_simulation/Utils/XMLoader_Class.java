@@ -7,10 +7,8 @@
 package com.jhw.simulation.police_car_simulation.utils;
 
 import com.jhw.simulation.police_car_simulation.inner.XMLInfo_Class;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import org.jdom.Document;

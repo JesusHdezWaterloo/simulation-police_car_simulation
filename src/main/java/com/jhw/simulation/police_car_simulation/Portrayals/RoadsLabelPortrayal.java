@@ -9,8 +9,6 @@
  */
 package com.jhw.simulation.police_car_simulation.portrayals;
 
-import com.jhw.swing.util.MaterialDrawingUtils;
-import java.awt.Graphics2D;
 import java.awt.Paint;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.SimplePortrayal2D;
@@ -35,13 +33,6 @@ public class RoadsLabelPortrayal extends LabelledPortrayal2D {
         }
 
         return "Desconocido";
-    }
-
-    @Override
-    public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-        MaterialDrawingUtils.getAliasedGraphics(graphics);
-        
-        super.draw(object, graphics, info);
     }
 
 }

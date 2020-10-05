@@ -7,7 +7,6 @@ package com.jhw.simulation.police_car_simulation.portrayals;
 
 import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_Sim;
 import com.jhw.simulation.police_car_simulation.main.SimulationMain;
-import com.jhw.swing.util.MaterialDrawingUtils;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import sim.portrayal.DrawInfo2D;
@@ -29,8 +28,6 @@ public class EmergenciesPortrayal extends GeomPortrayal {
 
     @Override
     public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-        MaterialDrawingUtils.getAliasedGraphics(graphics);
-
         MasonGeometry em = (MasonGeometry) object;
         scale = SimulationMain.cfg.getEmergenciesPointsScale();
         paint = ((PoliceCarsSimulation_Sim) state).getEmergenciesArr().get(em.getIntegerAttribute("ID")).getRealColor();

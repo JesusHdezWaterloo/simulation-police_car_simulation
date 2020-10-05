@@ -2,15 +2,18 @@ package com.jhw.simulation.police_car_simulation.main;
 
 import com.jhw.simulation.police_car_simulation.chart.ResponseTimeChart_Class;
 import com.jhw.simulation.police_car_simulation.chart.DistanceCoveredChart_Class;
+import com.jhw.simulation.police_car_simulation.inner.AreaColor_Class;
 import com.jhw.simulation.police_car_simulation.portrayals.EmergenciesPortrayal;
 import com.jhw.simulation.police_car_simulation.portrayals.PatrolsPortrayal;
 import com.jhw.simulation.police_car_simulation.reimplementations.MyDisplay2D;
 import com.jhw.simulation.police_car_simulation.portrayals.RoadsLabelPortrayal;
 import java.awt.*;
+import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JFrame;
 import sim.display.*;
 import sim.engine.SimState;
+import sim.field.geo.GeomVectorField;
 import sim.portrayal.*;
 import sim.portrayal.geo.*;
 
@@ -144,6 +147,25 @@ public class PoliceCarsSimulation_UI extends GUIState {
     public void setupPortrayals() {
         PoliceCarsSimulation_Sim sim = (PoliceCarsSimulation_Sim) state;
 
+        //areas
+        Iterator<GeomVectorFieldPortrayal> it1 = areasPortrayal.iterator();
+        Iterator<GeomVectorField> it2 = sim.getAreas().iterator();
+        Iterator<AreaColor_Class> it3 = SimulationMain.cfg.getUrlsAreas().iterator();
+        while (it1.hasNext() && it2.hasNext() && it3.hasNext()) {
+            GeomVectorFieldPortrayal port = it1.next();
+            GeomVectorField vf = it2.next();
+            AreaColor_Class color = it3.next();
+            port.setField(vf);
+            port.setPortrayalForAll(new GeomPortrayal(color.getRealColor(), true) {
+                @Override
+                public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
+                    graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                    graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                    super.draw(object, graphics, info);
+                }
+            });
+        }
+        
         roadsPortrayal.setField(sim.getRoads());
         roadsPortrayal.setPortrayalForAll(new RoadsLabelPortrayal(new GeomPortrayal(Color.BLACK, true), Color.BLUE));
 
