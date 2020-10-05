@@ -9,9 +9,7 @@
  */
 package com.jhw.simulation.police_car_simulation.portrayals;
 
-import java.awt.Graphics2D;
 import java.awt.Paint;
-import java.awt.RenderingHints;
 import sim.portrayal.DrawInfo2D;
 import sim.portrayal.SimplePortrayal2D;
 import sim.portrayal.simple.LabelledPortrayal2D;

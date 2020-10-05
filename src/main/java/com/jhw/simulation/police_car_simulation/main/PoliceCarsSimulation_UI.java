@@ -2,22 +2,20 @@ package com.jhw.simulation.police_car_simulation.main;
 
 import com.jhw.simulation.police_car_simulation.chart.ResponseTimeChart_Class;
 import com.jhw.simulation.police_car_simulation.chart.DistanceCoveredChart_Class;
-import com.jhw.simulation.police_car_simulation.agents.Patrol;
 import com.jhw.simulation.police_car_simulation.inner.AreaColor_Class;
+import com.jhw.simulation.police_car_simulation.portrayals.EmergenciesPortrayal;
+import com.jhw.simulation.police_car_simulation.portrayals.PatrolsPortrayal;
 import com.jhw.simulation.police_car_simulation.reimplementations.MyDisplay2D;
 import com.jhw.simulation.police_car_simulation.portrayals.RoadsLabelPortrayal;
 import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import sim.display.*;
 import sim.engine.SimState;
 import sim.field.geo.GeomVectorField;
 import sim.portrayal.*;
 import sim.portrayal.geo.*;
-import sim.portrayal.simple.ImagePortrayal2D;
-import sim.util.geo.*;
 
 /**
  * Class that describe the simulation's visualization.
@@ -146,11 +144,10 @@ public class PoliceCarsSimulation_UI extends GUIState {
      * Set up all the portrayals, put in it the corresponding field and the
      * visualization mode.
      */
-    private void setupPortrayals() {
+    public void setupPortrayals() {
         PoliceCarsSimulation_Sim sim = (PoliceCarsSimulation_Sim) state;
 
-        roadsPortrayal.setField(sim.getRoads());
-
+        //areas
         Iterator<GeomVectorFieldPortrayal> it1 = areasPortrayal.iterator();
         Iterator<GeomVectorField> it2 = sim.getAreas().iterator();
         Iterator<AreaColor_Class> it3 = SimulationMain.cfg.getUrlsAreas().iterator();
@@ -168,14 +165,22 @@ public class PoliceCarsSimulation_UI extends GUIState {
                 }
             });
         }
+        
+        roadsPortrayal.setField(sim.getRoads());
+        roadsPortrayal.setPortrayalForAll(new RoadsLabelPortrayal(new GeomPortrayal(Color.BLACK, true), Color.BLUE));
 
         junctionsPortrayal.setField(sim.getJunctions());
+        junctionsPortrayal.setPortrayalForAll(new GeomPortrayal(Color.LIGHT_GRAY, SimulationMain.cfg.getJunctionsPointsScale(), true));
 
         emergenciesPortrayal.setField(sim.getEmergencies());
+        emergenciesPortrayal.setPortrayalForAll(new EmergenciesPortrayal(sim));
 
         patrolsPortrayal.setField(sim.getPatrols());
-        adjustScale();
-    }
+        patrolsPortrayal.setPortrayalForAll(new PatrolsPortrayal(sim));
+
+        display.reset();
+        display.repaint();
+   }
 
     /**
      * Return the name of the simulation.
@@ -220,40 +225,6 @@ public class PoliceCarsSimulation_UI extends GUIState {
      */
     private void addEmergency(LocationWrapper loc) {
         ((PoliceCarsSimulation_Sim) state).addEmergency(loc);
-    }
-
-    /**
-     * Adjust the scale of the patrols, emergencies and junctions.
-     */
-    void adjustScale() {
-        junctionsPortrayal.setPortrayalForAll(new GeomPortrayal(Color.LIGHT_GRAY, SimulationMain.cfg.getJunctionsPointsScale(), true));
-
-        roadsPortrayal.setPortrayalForAll(new RoadsLabelPortrayal(new GeomPortrayal(Color.BLACK, true), Color.BLUE));
-
-        emergenciesPortrayal.setPortrayalForAll(new GeomPortrayal(Color.DARK_GRAY, SimulationMain.cfg.getEmergenciesPointsScale(), true) {
-            @Override
-            public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-                MasonGeometry em = (MasonGeometry) object;
-                scale = SimulationMain.cfg.getEmergenciesPointsScale();
-                paint = ((PoliceCarsSimulation_Sim) state).getEmergenciesArr().get(em.getIntegerAttribute("ID")).getRealColor();
-                super.draw(object, graphics, info);
-            }
-        });
-
-        patrolsPortrayal.setPortrayalForAll(
-                new GeomPortrayal(Color.RED, SimulationMain.cfg.getPatrolsPointsScale(), true) {
-            @Override
-            public void draw(Object object, Graphics2D graphics, DrawInfo2D info) {
-                MasonGeometry pat = (MasonGeometry) object;
-                scale = SimulationMain.cfg.getPatrolsPointsScale();
-                paint = ((PoliceCarsSimulation_Sim) state).getPatrolsArr().get(pat.getIntegerAttribute("ID")).getColor();
-                super.draw(object, graphics, info);
-            }
-        }
-        );
-        
-        display.reset();
-        display.repaint();
     }
 
     /**

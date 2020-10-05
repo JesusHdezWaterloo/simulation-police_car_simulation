@@ -7,16 +7,12 @@ package com.jhw.simulation.police_car_simulation.reimplementations;
 
 import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_Sim;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sim.io.geo.ShapeFileImporter;
 
 /**
  *

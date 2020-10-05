@@ -1,8 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'com.jhw.simulation'
+
+mainClassName = 'com.jhw.simulation.police_car_simulation.main.SimulationMain'
 
 repositories {
     jcenter()
