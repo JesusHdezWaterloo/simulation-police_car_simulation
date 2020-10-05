@@ -3,7 +3,7 @@
  * and * George Mason University. * * Licensed under the Academic Free License
  * version 3.0 * * See the file "LICENSE" for more information * * $Id$
  */
-package Utils;
+package com.jhw.simulation.police_car_simulation.utils;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.planargraph.DirectedEdgeStar;

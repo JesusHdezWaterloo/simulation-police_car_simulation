@@ -1,8 +1,11 @@
-package Agents;
+package com.jhw.simulation.police_car_simulation.agents;
 
-import Inner.*;
-import PoliceCarsSimulation.*;
-import Utils.AStar_Class;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
+import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_Sim;
+import com.jhw.simulation.police_car_simulation.inner.XMLInfo_Class;
+import com.jhw.simulation.police_car_simulation.inner.PatrolStateType_Enum;
+import com.jhw.simulation.police_car_simulation.inner.EmergencyStateType_Enum;
+import com.jhw.simulation.police_car_simulation.utils.AStar_Class;
 import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
 import com.vividsolutions.jts.planargraph.*;
@@ -633,7 +636,7 @@ public class Patrol implements Steppable {
         for (GeomPlanarGraphDirectedEdge act : path) {
             GeomPlanarGraphEdge edge = (GeomPlanarGraphEdge) act.getEdge();
             LineString nextRoute = edge.getLine();
-            dist += Utils.Utility_Class.lineStringLength(nextRoute);
+            dist += com.jhw.simulation.police_car_simulation.utils.Utility_Class.lineStringLength(nextRoute);
         }
         return dist;
     }

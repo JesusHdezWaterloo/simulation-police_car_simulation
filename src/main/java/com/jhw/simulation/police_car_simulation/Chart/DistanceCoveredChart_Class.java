@@ -1,6 +1,6 @@
-package Chart;
+package com.jhw.simulation.police_car_simulation.chart;
 
-import PoliceCarsSimulation.PoliceCarsSimulation_UI;
+import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_UI;
 import java.util.LinkedList;
 import javax.swing.JFrame;
 import org.jfree.data.xy.XYSeries;

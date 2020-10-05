@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Visuals.Auxiliar;
+package com.jhw.simulation.police_car_simulation.visuals.Auxiliar;
 
-import PoliceCarsSimulation.SimulationMain;
-import Inner.AgentType_Enum;
-import Utils.Utility_Class;
-import Visuals.Configuration.Configuration_UI;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
+import com.jhw.simulation.police_car_simulation.inner.AgentType_Enum;
+import com.jhw.simulation.police_car_simulation.utils.Utility_Class;
+import com.jhw.simulation.police_car_simulation.visuals.Configuration.Configuration_UI;
 import javax.swing.ImageIcon;
 import javax.swing.SpinnerNumberModel;
 

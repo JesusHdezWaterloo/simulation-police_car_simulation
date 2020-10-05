@@ -1,4 +1,4 @@
-package Inner;
+package com.jhw.simulation.police_car_simulation.inner;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Point;

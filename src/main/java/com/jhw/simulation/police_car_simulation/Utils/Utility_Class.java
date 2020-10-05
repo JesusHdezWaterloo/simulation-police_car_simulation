@@ -1,4 +1,4 @@
-package Utils;
+package com.jhw.simulation.police_car_simulation.utils;
 
 import com.vividsolutions.jts.geom.LineString;
 import java.awt.Component;

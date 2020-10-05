@@ -1,8 +1,8 @@
-package Agents;
+package com.jhw.simulation.police_car_simulation.agents;
 
-import Inner.EmergencyStateType_Enum;
-import PoliceCarsSimulation.PoliceCarsSimulation_Sim;
-import PoliceCarsSimulation.SimulationMain;
+import com.jhw.simulation.police_car_simulation.inner.EmergencyStateType_Enum;
+import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_Sim;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
 import com.vividsolutions.jts.geom.LineString;
 import java.awt.Color;
 import sim.engine.*;

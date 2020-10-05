@@ -1,6 +1,6 @@
-package Inner;
+package com.jhw.simulation.police_car_simulation.inner;
 
-import PoliceCarsSimulation.SimulationMain;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
 import java.awt.Color;
 
 /**

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Visuals.Configuration;
+package com.jhw.simulation.police_car_simulation.visuals.Configuration;
 
-import PoliceCarsSimulation.SimulationMain;
-import Reimplementations.ShapeFileReviewer;
-import Inner.AreaColor_Class;
-import Utils.Utility_Class;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
+import com.jhw.simulation.police_car_simulation.reimplementations.ShapeFileReviewer;
+import com.jhw.simulation.police_car_simulation.inner.AreaColor_Class;
+import com.jhw.simulation.police_car_simulation.utils.Utility_Class;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;

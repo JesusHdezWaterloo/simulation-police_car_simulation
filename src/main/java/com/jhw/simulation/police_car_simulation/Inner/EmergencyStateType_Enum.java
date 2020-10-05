@@ -1,4 +1,4 @@
-package Inner;
+package com.jhw.simulation.police_car_simulation.inner;
 
 /**
  * Class that describe the possibles emergency's states

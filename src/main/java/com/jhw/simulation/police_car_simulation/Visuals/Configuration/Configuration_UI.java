@@ -1,7 +1,7 @@
-package Visuals.Configuration;
+package com.jhw.simulation.police_car_simulation.visuals.Configuration;
 
-import PoliceCarsSimulation.SimulationMain;
-import Utils.Utility_Class;
+import com.jhw.simulation.police_car_simulation.main.SimulationMain;
+import com.jhw.simulation.police_car_simulation.utils.Utility_Class;
 
 /**
  *

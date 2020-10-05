@@ -1,6 +1,6 @@
-package Utils;
+package com.jhw.simulation.police_car_simulation.utils;
 
-import Inner.AreaColor_Class;
+import com.jhw.simulation.police_car_simulation.inner.AreaColor_Class;
 import com.vividsolutions.jts.geom.Envelope;
 import java.awt.Color;
 import java.awt.Dimension;

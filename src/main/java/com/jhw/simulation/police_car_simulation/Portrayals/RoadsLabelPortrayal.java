@@ -7,7 +7,7 @@
  *
  * $Id$
  */
-package Portrayals;
+package com.jhw.simulation.police_car_simulation.portrayals;
 
 import java.awt.Graphics2D;
 import java.awt.Paint;

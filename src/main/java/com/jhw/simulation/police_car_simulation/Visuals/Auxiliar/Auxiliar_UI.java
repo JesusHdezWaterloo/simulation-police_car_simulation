@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Visuals.Auxiliar;
+package com.jhw.simulation.police_car_simulation.visuals.Auxiliar;
 
 /**
  *
@@ -86,7 +86,7 @@ public class Auxiliar_UI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane;
     // End of variables declaration//GEN-END:variables
 
-    public Inner.AgentType_Enum getTypeNewInserted() {
+    public com.jhw.simulation.police_car_simulation.inner.AgentType_Enum getTypeNewInserted() {
         return ((General_Panel) jTabbedPane.getComponentAt(0)).getTypeNewInserted();
     }
 

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Reimplementations;
+package com.jhw.simulation.police_car_simulation.reimplementations;
 
-import PoliceCarsSimulation.PoliceCarsSimulation_Sim;
+import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_Sim;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

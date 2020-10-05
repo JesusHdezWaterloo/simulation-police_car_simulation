@@ -1,6 +1,6 @@
-package Reimplementations;
+package com.jhw.simulation.police_car_simulation.reimplementations;
 
-import PoliceCarsSimulation.PoliceCarsSimulation_UI;
+import com.jhw.simulation.police_car_simulation.main.PoliceCarsSimulation_UI;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.Point;
 import sim.display.Display2D;

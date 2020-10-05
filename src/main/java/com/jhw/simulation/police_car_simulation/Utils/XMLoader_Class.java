@@ -4,9 +4,9 @@
  -Instalaciones[instalacion(lugar y coordenada)]
  -Puntos de demandas
  */
-package Utils;
+package com.jhw.simulation.police_car_simulation.utils;
 
-import Inner.XMLInfo_Class;
+import com.jhw.simulation.police_car_simulation.inner.XMLInfo_Class;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;

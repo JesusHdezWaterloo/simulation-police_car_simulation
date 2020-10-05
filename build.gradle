@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.util'
+group = 'com.jhw.simulation'
 
 repositories {
     jcenter()
@@ -12,13 +12,9 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.13'
     
-    implementation project(':utils-core')
-    implementation project(':clean-core-full')
-    implementation project(':clean-swing')
+    compile fileTree(dir: 'libs', include: '*.jar')
     
     implementation project(':swing-derivable_icons')
     implementation project(':swing-material-standards')
-    implementation project(':module-util-personalization')
-    
     implementation project(':swing-material-core')
 }
